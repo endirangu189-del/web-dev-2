@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Orders & Returns - Mobixx</title>
+    
+    <style>
+        /* General Body Settings */
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #ffffff; /* White background */
+            margin: 0;
+            padding: 0;
+            color: #333;
+        }
+
+        /* Header Navigation */
+        header {
+            background-color: #ff6600; /* Mobixx Orange */
+            padding: 15px;
+            color: white;
+            text-align: center;
+        }
+        
+        header a {
+            color: white;
+            text-decoration: none;
+            margin: 0 15px;
+            font-weight: bold;
+            font-size: 18px;
+        }
+
+        header a:hover {
+            text-decoration: underline;
+        }
+
+        /* Container */
+        .container {
+            width: 80%;
+            margin: 20px auto;
+        }
+
+        /* Section Headings */
+        h2 {
+            color: #ff6600;
+            border-bottom: 2px solid #ff6600;
+            padding-bottom: 10px;
+            margin-top: 30px;
+        }
+
+        /* --- TABLE STYLES (For Order History) --- */
+        table {
+            width: 100%;
+            border-collapse: collapse; /* Removes space between borders */
+            margin-bottom: 20px;
+        }
+
+        th {
+            background-color: #ff6600; /* Orange Header */
+            color: white;
+            padding: 12px;
+            text-align: left;
+        }
+
+        td {
+            border: 1px solid #ddd;
+            padding: 10px;
+        }
+
+        tr:nth-child(even) {
+            background-color: #fff4e6; /* Very light orange for alternate rows */
+        }
+
+        /* --- FORM STYLES (For Returns) --- */
+        .return-form {
+            background-color: #f9f9f9;
+            padding: 20px;
+            border: 1px solid #ffcc99; /* Light orange border */
+            border-radius: 5px;
+        }
+
+        label {
+            display: block;
+            margin-top: 10px;
+            font-weight: bold;
+        }
+
+        input[type="text"], select, textarea {
+            width: 100%;
+            padding: 10px;
+            margin-top: 5px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            box-sizing: border-box;
+        }
+
+        /* Buttons */
+        .btn {
+            background-color: #ff6600;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 14px;
+            margin-top: 15px;
+        }
+
+        .btn:hover {
+            background-color: #e65c00;
+        }
+
+        /* Status Badges */
+        .status-delivered {
+            color: green;
+            font-weight: bold;
+        }
+        .status-shipped {
+            color: #e65c00; /* Orange */
+            font-weight: bold;
+        }
+    </style>
+
+    <script type="text/javascript">
+        // Function to handle Return Request
+        function submitReturn() {
+            var orderID = document.getElementById("order-id").value;
+            var reason = document.getElementById("reason").value;
+
+            if (orderID === "" || reason === "") {
+                alert("Please enter the Order ID and select a reason.");
+            } else {
+                alert("Return Request Initiated for Order #" + orderID + ".\nWe have emailed you a shipping label.");
+                // In a real backend, this would send data to a server
+            }
+        }
+
+        // Function to 'Track' an order
+        function trackOrder(id) {
+            alert("Tracking Order #" + id + "...\nCurrent Status: In Transit to Local Facility.");
+        }
+    </script>
+</head>
+
+<body>
+
+    <header>
+        <span>MOBIXX</span>
+        <a href="web dev 2.html">Home</a>
+        <a href="mobixx_shop.html">Shop</a>
+        <a href="#">Orders & Returns</a>
+        <a href="sign in.html">Sign In</a>
+    </header>
+
+    <div class="container">
+        
+        <h2>Your Order History</h2>
+        <table>
+            <tr>
+                <th>Order ID</th>
+                <th>Date</th>
+                <th>Item(s)</th>
+                <th>Total</th>
+                <th>Status</th>
+                <th>
